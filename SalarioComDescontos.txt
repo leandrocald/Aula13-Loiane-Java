@@ -1,0 +1,36 @@
+package com.leandrocald.cursojava.aula13;
+
+import java.util.Scanner;
+
+public class SalarioComDescontos {
+
+	public static void main(String[] args) {
+
+
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Digite quanto você ganha por hora:  ");
+		double salHora = scan.nextDouble();
+		
+		System.out.println("Digite quantas horas você trabalha no mês:  ");
+		double horaMes = scan.nextDouble();
+		
+		// só vou declarar para ficar separado, mas sei que poderia fazer isso sem criar variável
+		double salario = salHora*horaMes;
+		double descInss =  salario*0.08;
+		double descIR =  salario*0.11;
+		double descSind =  salario*0.05;
+		double salarioLiq =  (salario -(descInss+descIR+descSind));
+		
+		System.out.println("O Salário Bruto é:" +salario);
+		System.out.println("O desconto do INSS é:" + descInss    );
+		System.out.println("O desconto do IR é:" + descIR    );
+		System.out.println("O desconto do Sindicato é:" + descSind    );
+		System.out.println("O Total de Descontos é:" + (salario - salarioLiq)    );
+		System.out.println("O Salário Líquido é:" + salarioLiq    );
+		
+		
+		
+	}
+
+}
